@@ -1,6 +1,6 @@
 import pytest
 
-from src.processing.processing import filter_by_state, sort_by_date
+from src.processing import filter_by_state, sort_by_date
 
 
 class TestFilterByState:

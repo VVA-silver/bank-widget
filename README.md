@@ -179,7 +179,7 @@ get_date("2024-03-11T02:26:18.671407")
 **Пример:**
 
 ```python
-from src.processing.processing import filter_by_state
+from src.processing import filter_by_state
 
 operations = [
     {'id': 41428829, 'state': 'EXECUTED', 'date': '2019-07-03T18:35:29.512364'},
@@ -208,7 +208,7 @@ filter_by_state(operations, state='CANCELED')
 **Пример:**
 
 ```python
-from src.processing.processing import sort_by_date
+from src.processing import sort_by_date
 
 sort_by_date(operations)
 # [{'id': 41428829, 'date': '2019-07-03...'}, ...]
