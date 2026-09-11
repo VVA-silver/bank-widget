@@ -32,7 +32,58 @@ cd bank-widget
 python --version
 ```
 
-Сторонних зависимостей нет — проект использует только стандартную библиотеку Python.
+3. Установите зависимости для разработки:
+
+```bash
+pip install pytest pytest-cov flake8 mypy isort
+```
+
+---
+
+## Тестирование
+
+Тесты написаны с использованием `pytest` и покрывают все модули проекта.
+
+### Структура тестов
+
+```
+tests/
+├── conftest.py          # фикстуры для всех тестов
+├── test_masks.py        # тесты модуля masks
+├── test_widget.py       # тесты модуля widget
+└── test_processing.py   # тесты модуля processing
+```
+
+### Запуск тестов
+
+```bash
+pytest tests/ -v
+```
+
+### Запуск тестов с отчётом покрытия
+
+```bash
+pytest tests/ --cov=src --cov-report=term-missing --cov-report=html:htmlcov
+```
+
+HTML-отчёт покрытия сохраняется в папку `htmlcov/`.
+
+### Текущее покрытие
+
+| Модуль | Покрытие |
+|---|---|
+| `src/masks.py` | 100% |
+| `src/widget.py` | 100% |
+| `src/processing/processing.py` | 100% |
+| **Итого** | **100%** |
+
+### Линтеры
+
+```bash
+flake8 src/ tests/
+mypy src/
+isort src/ tests/ --check-only
+```
 
 ---
 
