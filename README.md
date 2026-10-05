@@ -88,3 +88,8 @@ for card_number in card_number_generator(1, 5):
 pytest
 Проверка кода с помощью Flake8:
 flake8 src tests
+
+Покрытие тестами
+Для проверки покрытия используется pytest-cov.
+Запуск тестов и создание HTML-отчёта:
+pytest --cov=src --cov-report=html --cov-fail-under=80
